@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'products',
     'categories',
     'brands',
-    'nutrition_facts',
 ]
 
 MIDDLEWARE = [
