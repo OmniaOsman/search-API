@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /api/v1/categories/:
+    get:
+      operationId: v1_categories_list
+      description: Retrieve all categories from the database.
+      summary: Get all categories
+      tags:
+      - Categories
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+          description: ''
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddCategory'
+          description: ''
+    post:
+      operationId: v1_categories_create
+      description: Add a new category to the database.
+      summary: Add a new category
+      tags:
+      - Categories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddCategory'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddCategory'
+          description: ''
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+                description: Unspecified response body
+          description: ''
+components:
+  schemas:
+    AddCategory:
+      type: object
+      properties:
+        name_en:
+          type: string
+          title: English Name
+          maxLength: 255
+        name_ar:
+          type: string
+          title: Arabic Name
+          maxLength: 255
+      required:
+      - name_ar
+      - name_en
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name_en:
+          type: string
+          title: English Name
+          maxLength: 255
+        name_ar:
+          type: string
+          title: Arabic Name
+          maxLength: 255
+        slug:
+          type: string
+          maxLength: 255
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name_ar
+      - name_en
