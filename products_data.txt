@@ -53,7 +53,7 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('Seclam Tuna in Oil 185g',             'سيكلام تونة بالزيت ١٨٥ جم',        7, 7, '{"Calories": 210, "Protein": "25g"}'),
 ('Tiger Tomato Paste 135g',             'تايجر معجون طماطم ١٣٥ جم',        7, 7, '{"Calories": 40,  "Sugar": "6g"}'),
 ('California Garden Chickpeas 400g',    'كاليفورنيا جاردن حمص ٤٠٠ جم',      7, 7, '{"Calories": 150, "Protein": "7g"}'),
-('Regina Peeled Tomatoes 400g',         'رجينا طماطم مقشرة ٤٠٠ جم',         7, 7, '{"Calories": 80,  "Sugar": "9g"}');
+('Regina Peeled Tomatoes 400g',         'رجينا طماطم مقشرة ٤٠٠ جم',         7, 7, '{"Calories": 80,  "Sugar": "9g"}'),
 
 ('Juhayna Mango Yogurt 110g', 'جهينه زبادي مانجو ١١٠ جم', 1, 1, '{"Calories": 108, "Protein": "5g", "Sugar": "13g"}'),
 ('Juhayna Mixed Fruit Juice 1L', 'جهينه عصير فواكه مشكلة ١ لتر', 1, 2, '{"Calories": 118, "Sugar": "26g"}'),
@@ -101,9 +101,8 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('Tiger Beans with Oil & Lemon 400g', 'تايجر فول زيت وليمون ٤٠٠ جم', 7, 7, '{"Calories": 160, "Fat": "6g"}'),
 ('California Garden Lentils 400g', 'كاليفورنيا جاردن عدس ٤٠٠ جم', 7, 7, '{"Calories": 180, "Protein": "10g"}'),
 ('Regina Tomato Paste 135g', 'رجينا صلصة طماطم ١٣٥ جم', 7, 7, '{"Calories": 45, "Sugar": "5g"}'),
-('Seclam Tuna in Water 185g', 'سيكلام تونة بالماء ١٨٥ جم', 7, 7, '{"Calories": 150, "Protein": "26g"}');
+('Seclam Tuna in Water 185g', 'سيكلام تونة بالماء ١٨٥ جم', 7, 7, '{"Calories": 150, "Protein": "26g"}'),
 
--- Juhayna (Dairy/Beverages)
 ('Juhayna Vanilla Yogurt 110g',          'جهينه زبادي فانيليا ١١٠ جم',           1, 1, '{"Calories": 105, "Protein": "5g", "Sugar": "12g"}'),
 ('Juhayna Peach Yogurt 110g',            'جهينه زبادي خوخ ١١٠ جم',               1, 1, '{"Calories": 107, "Protein": "5g"}'),
 ('Juhayna Carrot-Orange Juice 1L',       'جهينه عصير جزر-برتقال ١ لتر',           1, 2, '{"Calories": 108, "Sugar": "23g"}'),
@@ -156,9 +155,8 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('Regina Chickpeas 400g',                'رجينا حمص ٤٠٠ جم',                    7, 7, '{"Calories": 150, "Protein": "7g"}'),
 ('Wadi Food Stuffed Vine Leaves 400g',   'وادي فود ورق عنب محشي ٤٠٠ جم',        7, 7, '{"Calories": 95,  "Fat": "4g"}'),
 ('Seclam Tuna Hot Chili 185g',           'سيكلام تونة حارة ١٨٥ جم',             7, 7, '{"Calories": 210, "Protein": "24g"}'),
-('Tiger Broad Beans Egyptian 400g',      'تايجر فول مصري ٤٠٠ جم',               7, 7, '{"Calories": 148, "Protein": "9g"}');
+('Tiger Broad Beans Egyptian 400g',      'تايجر فول مصري ٤٠٠ جم',               7, 7, '{"Calories": 148, "Protein": "9g"}'),
 
-('Juhayna Berry Yogurt 110g',            'جهينه زبادي توت ١١٠ جم',             1, 1, '{"Calories": 109, "Protein": "5g", "Sugar": "13g"}'),
 ('Juhayna Cappuccino Milk 200ml',        'جهينه لبن كابتشينو ٢٠٠ مل',           1, 1, '{"Calories": 150, "Sugar": "17g"}'),
 ('Juhayna Guava Juice 1L',               'جهينه عصير جوافة ١ لتر',              1, 2, '{"Calories": 118, "Sugar": "25g"}'),
 ('Juhayna Laban Up 500ml',               'جهينه لبن أب ٥٠٠ مل',                 1, 1, '{"Calories": 155, "Protein": "7g"}'),
@@ -210,7 +208,7 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('California Garden Baked Beans 400g',  'كاليفورنيا جاردن فاصوليا مطبوخة ٤٠٠ جم',7, 7, '{"Calories": 155, "Protein": "8g"}'),
 ('Tiger Foul Medammes Plain 400g',      'تايجر فول مدمس سادة ٤٠٠ جم',         7, 7, '{"Calories": 145, "Protein": "9g"}'),
 ('Regina Tomato Puree 350g',            'رجينا بيوريه طماطم ٣٥٠ جم',          7, 7, '{"Calories": 60,  "Sugar": "7g"}'),
-('Seclam Tuna Sunflower Oil 185g',      'سيكلام تونة زيت دوار الشمس ١٨٥ جم',   7, 7, '{"Calories": 215, "Protein": "25g"}');
+('Seclam Tuna Sunflower Oil 185g',      'سيكلام تونة زيت دوار الشمس ١٨٥ جم',   7, 7, '{"Calories": 215, "Protein": "25g"}'),
 
 ('Juhayna Kiwi Yogurt 110g',              'جهينه زبادي كيوي ١١٠ جم',              1, 1, '{"Calories": 107, "Protein": "5g", "Sugar": "12g"}'),
 ('Juhayna Raspberry Juice 1L',            'جهينه عصير توت أحمر ١ لتر',             1, 2, '{"Calories": 120, "Sugar": "26g"}'),
@@ -265,13 +263,7 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('California Garden Peas & Carrots 400g', 'كاليفورنيا جاردن بسلة وجزر ٤٠٠ جم',    7, 7, '{"Calories": 110, "Fiber": "5g"}'),
 ('Tiger Foul Medammes Hot Chili 400g',    'تايجر فول حار ٤٠٠ جم',               7, 7, '{"Calories": 150, "Protein": "9g"}'),
 ('Regina Tomato Passata 530g',            'رجينا باساتا طماطم ٥٣٠ جم',           7, 7, '{"Calories": 70,  "Sugar": "9g"}'),
-('Seclam Sardines in Oil 125g',           'سيكلام سردين بالزيت ١٢٥ جم',          7, 7, '{"Calories": 210, "Protein": "22g"}');
-
-('Juhayna Berry Yogurt 110g',            'جهينه زبادي توت ١١٠ جم',             1, 1, '{"Calories": 109, "Protein": "5g", "Sugar": "13g"}'),
-('Juhayna Cappuccino Milk 200ml',        'جهينه لبن كابتشينو ٢٠٠ مل',           1, 1, '{"Calories": 150, "Sugar": "17g"}'),
-('Juhayna Guava Juice 1L',               'جهينه عصير جوافة ١ لتر',              1, 2, '{"Calories": 118, "Sugar": "25g"}'),
-('Juhayna Laban Up 500ml',               'جهينه لبن أب ٥٠٠ مل',                 1, 1, '{"Calories": 155, "Protein": "7g"}'),
-('Juhayna UHT Semi-Skim Milk 1L',        'جهينه لبن نصف دسم ١ لتر',             1, 1, '{"Calories": 105, "Protein": "7g"}'),
+('Seclam Sardines in Oil 125g',           'سيكلام سردين بالزيت ١٢٥ جم',          7, 7, '{"Calories": 210, "Protein": "22g"}'),
 
 ('Almarai Raspberry Smoothie 330ml',     'المرعى سموزي توت أحمر ٣٣٠ مل',        2, 2, '{"Calories": 134, "Sugar": "24g"}'),
 ('Almarai Apricot Yogurt 110g',          'المرعى زبادي مشمش ١١٠ جم',           2, 1, '{"Calories": 106, "Protein": "5g"}'),
@@ -319,7 +311,7 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('California Garden Baked Beans 400g',  'كاليفورنيا جاردن فاصوليا مطبوخة ٤٠٠ جم',7, 7, '{"Calories": 155, "Protein": "8g"}'),
 ('Tiger Foul Medammes Plain 400g',      'تايجر فول مدمس سادة ٤٠٠ جم',         7, 7, '{"Calories": 145, "Protein": "9g"}'),
 ('Regina Tomato Puree 350g',            'رجينا بيوريه طماطم ٣٥٠ جم',          7, 7, '{"Calories": 60,  "Sugar": "7g"}'),
-('Seclam Tuna Sunflower Oil 185g',      'سيكلام تونة زيت دوار الشمس ١٨٥ جم',   7, 7, '{"Calories": 215, "Protein": "25g"}');
+('Seclam Tuna Sunflower Oil 185g',      'سيكلام تونة زيت دوار الشمس ١٨٥ جم',   7, 7, '{"Calories": 215, "Protein": "25g"}'),
 
 ('Juhayna Strawberry Yogurt 105g',       'جهينه زبادي فراولة ١٠٥ جم',               1, 1, '{"Calories": 100, "Protein": "4g", "Sugar": "12g"}'),
 ('Juhayna Full Cream Milk 1L',           'جهينه لبن كامل الدسم ١ لتر',              1, 1, '{"Calories": 150, "Protein": "8g", "Fat": "8g"}'),
@@ -367,8 +359,7 @@ INSERT INTO products_product (name_en, name_ar, brand_id, category_id, nutrition
 ('Bisco Misr Butter Biscuits 80g',       'بسكو مصر بسكويت زبدة ٨٠ جم',           4, 3, '{"Calories": 360, "Sugar": "18g"}'),
 ('Corona Hazelnut Chocolate 50g',        'كورونا شوكولاتة بالبندق ٥٠ جم',        6, 6, '{"Calories": 250, "Sugar": "19g"}'),
 ('El Shamadan Strawberry Wafer 25g',     'الشمدان ويفر فراولة ٢٥ جم',            4, 3, '{"Calories": 130, "Sugar": "10g"}'),
-('Tropicana Tuna in Water 185g',         'تروبيكانا تونة في الماء ١٨٥ جم',        7, 7, '{"Calories": 160, "Protein": "26g"}');
-
+('Tropicana Tuna in Water 185g',         'تروبيكانا تونة في الماء ١٨٥ جم',        7, 7, '{"Calories": 160, "Protein": "26g"}'),
 ('Juhayna Peach Greek Yogurt 150g','جهينه زبادي يوناني خوخ ١٥٠ جم',1,1,'{"Calories": 128,"Protein":"10g","Sugar":"12g"}'),
 ('Juhayna Pomegranate Juice 1L','جهينه عصير رمان ١ لتر',1,2,'{"Calories": 125,"Sugar":"27g"}'),
 ('Juhayna Iced Coffee 250ml','جهينه قهوة مثلجة ٢٥٠ مل',1,1,'{"Calories": 140,"Sugar":"16g"}'),

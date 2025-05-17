@@ -7,29 +7,34 @@ import hashlib
 from products.models import Product
 
 
+def add_product(data: dict) -> dict:
+    Product.objects.create(**data)
+    return {
+        "success": True,
+        "message": "Product added successfully.",
+    }
+
+
 class UnaccentImmutable(Func):
     function = 'unaccent_immutable'
     output_field = TextField()
 
 
 def remove_accents(text: str) -> str:
-    """Remove accents from a string."""
     return ''.join(c for c in normalize('NFD', text) if category(c) != 'Mn')
 
 
 def normalize_query(query: str) -> tuple[str, str, set[str]]:
-    """Normalize a query string."""
     query_unaccented = remove_accents(query)
     tokens = set(query.lower().split() + query_unaccented.lower().split())
     return query.strip(), query_unaccented, tokens
 
 
 def search_products(validated_data: dict) -> list[Product]:
-    """Search products based on query, category, and brand."""
-    query: str = validated_data.get('query', '').strip()
-    page: int = validated_data.get('page', 1)
-    category_id: int = validated_data.get('category_id')
-    brand_id: int = validated_data.get('brand_id')
+    query = validated_data.get('query', '').strip()
+    page = validated_data.get('page', 1)
+    category_id = validated_data.get('category_id')
+    brand_id = validated_data.get('brand_id')
 
     if not query:
         return Product.objects.none()
@@ -49,13 +54,13 @@ def search_products(validated_data: dict) -> list[Product]:
         'category__name_en', 'category__name_ar',
     ]
 
-    # Filter by category and brand if provided
-    filters: dict = {}
+    filters = Q()
     if category_id:
-        filters['category_id'] = category_id
+        filters &= Q(category_id=category_id)
     if brand_id:
-        filters['brand_id'] = brand_id
-    qs = Product.objects.filter(**filters)
+        filters &= Q(brand_id=brand_id)
+
+    qs = Product.objects.filter(filters)
 
     partial_q = Q()
     for field in SEARCH_FIELDS:
@@ -78,7 +83,7 @@ def search_products(validated_data: dict) -> list[Product]:
     )
 
     full_token_match_cond = reduce(lambda q, t: q & Q(name_en__icontains=t), tokens, Q())
-    
+
     qs = qs.annotate(
         full_token_match=Case(
             When(full_token_match_cond, then=1),
@@ -95,13 +100,10 @@ def search_products(validated_data: dict) -> list[Product]:
         priority=F('similarity') * 2 + F('token_match_count') + F('full_token_match') * 3
     ).order_by('-priority', '-similarity', '-token_match_count')
 
-    page_size: int = 20
-    start: int = page_size * (page - 1)
-    end: int = start + page_size
+    page_size = 20
+    start = page_size * (page - 1)
+    end = start + page_size
+    paged = list(qs.only('id', 'name_ar', 'name_en')[start:end])
 
-    paged:list[Product] = list(qs.only('id', 'name_ar', 'name_en')[start:end])
-
-    # cache the results for 5 minutes
     cache.set(cache_key, [p.id for p in paged], 300)
-
     return paged
