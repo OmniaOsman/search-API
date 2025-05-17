@@ -1,0 +1,8 @@
+INSERT INTO categories_category (name_en, name_ar) VALUES
+('Dairy Products', 'منتجات الألبان'),
+('Beverages', 'المشروبات'),
+('Snacks', 'الوجبات الخفيفة'),
+('Bakery', 'المخابز'),
+('Frozen Foods', 'الأطعمة المجمدة'),
+('Sweets & Desserts', 'الحلويات'),
+('Canned Foods', 'الأطعمة المعلبة');

@@ -25,7 +25,9 @@ class BrandListView(APIView):
         tags=["Brands"],
         request=AddBulkBrandSerializer,
         responses={
-            201: 'brands added successfully',
+            201: BrandResponseSerializer(many=True),
+            400: "Bad Request",
+            500: "Internal Server Error"
         },
     )
     def post(self, request):

@@ -1,0 +1,8 @@
+INSERT INTO brands_brand (name_en, name_ar) VALUES
+('Juhayna', 'جهينه'),
+('Almarai Egypt', 'المراعي مصر'),
+('Halawa Tahina', 'حلاوة طحينة'),
+('Edita', 'إيديتا'),
+('Americana Group', 'أمريكانا جروب'),
+('Obour Land', 'أرض العبور'),
+('Al Ahram Beverages', 'مشروبات الأهرام');

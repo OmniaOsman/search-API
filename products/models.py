@@ -16,11 +16,9 @@ class Product(models.Model):
 
     class Meta:
         indexes = [
-            # Trigrams for fuzzy matching
             GinIndex(
-                fields=['name_en'],
-                name='name_en_gin_idx',
-                opclasses=['gin_trgm_ops']
+                fields=['search_vector'],
+                name='search_vector_gin_idx'
             ),
             GinIndex(
                 fields=['name_ar'],
@@ -28,8 +26,9 @@ class Product(models.Model):
                 opclasses=['gin_trgm_ops']
             ),
             GinIndex(
-                fields=['search_vector'],
-                name='search_vector_gin_idx'
+                fields=['name_en'],
+                name='name_en_gin_idx',
+                opclasses=['gin_trgm_ops']
             ),
         ]
 

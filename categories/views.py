@@ -25,7 +25,9 @@ class CategoryListView(APIView):
         tags=["Categories"],
         request=AddBulkCategorySerializer,
         responses={
-            201: "category added successfully",
+            201: CategoryResponseSerializer(many=True),
+            400: "Bad Request",
+            500: "Internal Server Error"
         },
     )
     def post(self, request):

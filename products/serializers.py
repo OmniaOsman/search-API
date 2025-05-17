@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Product
 from core.utils import ResponseSerializer
+from rest_framework.pagination import PageNumberPagination
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -27,4 +28,13 @@ class AddProductSerializer(serializers.ModelSerializer):
 
 
 class SearchProductSerializer(serializers.Serializer):
-    query = serializers.CharField()
+    query = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    category_id = serializers.IntegerField(required=False, allow_null=True)
+    brand_id = serializers.IntegerField(required=False, allow_null=True)
+
+
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
