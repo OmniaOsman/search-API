@@ -8,6 +8,12 @@ class ProductsConfig(AppConfig):
 
     def ready(self):
         import products.signals
-        with connection.cursor() as cursor:
-            cursor.execute("CREATE EXTENSION IF NOT EXISTS pg_trgm")
-            cursor.execute("CREATE EXTENSION IF NOT EXISTS unaccent")
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("CREATE EXTENSION IF NOT EXISTS pg_trgm")
+                cursor.execute("CREATE EXTENSION IF NOT EXISTS unaccent")
+        except Exception as e:
+            # Log the error but don't fail app initialization
+            # This allows tests to run even if DB connection isn't ready yet
+            print(f"Warning: Could not create PostgreSQL extensions: {e}")
+            # In production, these extensions should be created manually or via migrations
