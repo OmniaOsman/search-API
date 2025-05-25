@@ -17,17 +17,24 @@ jobs:
           POSTGRES_USER: user
           POSTGRES_PASSWORD: password
           POSTGRES_DB: test_db
-        ports: ['5432:5432']
+        ports:
+          - 5432:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
 
+    env:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: localhost
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -37,7 +44,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Django Tests
-        env:
-          DATABASE_URL: postgres://user:password@localhost:5432/test_db
         run: |
           python manage.py test
