@@ -14,9 +14,9 @@ jobs:
       postgres:
         image: postgres:13
         env:
-          POSTGRES_USER: user
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: test_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: q!s3f@(u
+          POSTGRES_DB: search
         ports:
           - 5432:5432
         options: >-
@@ -27,8 +27,8 @@ jobs:
 
     env:
       POSTGRES_DB: test_db
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: q!s3f@(u
       POSTGRES_HOST: localhost
 
     steps:
